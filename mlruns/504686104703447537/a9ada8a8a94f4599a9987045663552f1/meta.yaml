@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/niranjan/Desktop/Niranjan/COEP practical/ML_OPS/mlops_project/mlruns/504686104703447537/a9ada8a8a94f4599a9987045663552f1/artifacts
+end_time: 1777974967330
+entry_point_name: ''
+experiment_id: '504686104703447537'
+lifecycle_stage: active
+run_id: a9ada8a8a94f4599a9987045663552f1
+run_name: fun-cub-526
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777974966328
+status: 3
+tags: []
+user_id: niranjan

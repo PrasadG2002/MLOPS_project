@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/niranjan/Desktop/Niranjan/COEP practical/ML_OPS/mlops_project/mlruns/504686104703447537/d17b9c1011574fa989cde6a6bb995184/artifacts
+end_time: 1777974995769
+entry_point_name: ''
+experiment_id: '504686104703447537'
+lifecycle_stage: active
+run_id: d17b9c1011574fa989cde6a6bb995184
+run_name: resilient-swan-28
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777974994669
+status: 3
+tags: []
+user_id: niranjan
