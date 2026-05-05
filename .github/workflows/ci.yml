@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run DVC pipeline (if data available)
+      run: |
+        dvc pull || echo "Data not available, skipping pull"
+        dvc repro || echo "Pipeline failed, check data"
+
+    - name: Build Docker image
+      run: docker build -t content-moderation-api .
+
+    - name: Test API startup
+      run: |
+        docker run -d --name api-container -p 8000:8000 content-moderation-api
+        sleep 10
+        curl -f http://localhost:8000/ || (docker logs api-container && exit 1)
+        docker stop api-container
