@@ -6,3 +6,5 @@ scikit-learn
 joblib
 mlflow
 dvc
+prometheus-fastapi-instrumentator
+prefect
